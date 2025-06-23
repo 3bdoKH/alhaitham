@@ -44,11 +44,11 @@
     flex-direction: column;
   }
   .gallery-image {
-    width: 100vw;
-    height: 120px;
+    width: 82vw;
+    height: 100px;
     border-right: none;
     border-bottom: 4px solid #fff;
-    border-radius: 1.2rem;
+    border-radius: 9999px;
   }
   .gallery-image:not(:last-child) {
     border-bottom: 4px solid #fff;

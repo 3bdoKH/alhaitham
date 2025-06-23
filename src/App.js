@@ -10,7 +10,6 @@ import Modal from './components/Modal';
 import './components/modal.css';
 
 function getAllProducts() {
-  // Flatten all products into a single array with category info
   const all = [];
   products.forEach((product) => {
     product.images.forEach((img, idx) => {
@@ -39,7 +38,7 @@ function getRandomProducts(count) {
 function App() {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = React.useState("");
-  const randomProducts = getRandomProducts(10).filter(product =>
+  const randomProducts = getRandomProducts(6).filter(product =>
     product.title.toLowerCase().includes(searchValue.toLowerCase()) ||
     (product.description && product.description.toLowerCase().includes(searchValue.toLowerCase()))
   );

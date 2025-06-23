@@ -14,13 +14,17 @@ function getRandomImages(count) {
 }
 
 const Gallery = () => {
-  const [images, setImages] = useState(() => getRandomImages(3));
+  const getImageCount = () => (window.innerWidth <= 600 ? 1 : 3);
+  const [images, setImages] = useState(() => getRandomImages(getImageCount()));
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setImages(getRandomImages(3));
-    }, 3000);
-    return () => clearInterval(interval);
+    const updateImages = () => setImages(getRandomImages(getImageCount()));
+    const interval = setInterval(updateImages, 3000);
+    window.addEventListener('resize', updateImages);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', updateImages);
+    };
   }, []);
 
   return (

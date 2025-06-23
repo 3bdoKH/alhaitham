@@ -41,10 +41,16 @@
 
 @media (max-width: 700px) {
   .category-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
+  }
+  .product-card {
+    font-size: 0.95rem;
+  }
+  body, html {
+    font-size: 15px;
   }
 }

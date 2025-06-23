@@ -5,8 +5,9 @@ import { products } from '../../data';
 import Header from '../../components/header/Header';
 import Modal from '../../components/Modal';
 import '../../components/modal.css';
+import Footer from '../../components/footer/Footer';
 
-const PRODUCTS_PER_PAGE = 10;
+const PRODUCTS_PER_PAGE = 6;
 
 function CategorySection({ product, onProductClick }) {
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
@@ -70,6 +71,7 @@ const Products = () => {
       {filteredProducts.map((product) => (
         <CategorySection key={product.key} product={product} onProductClick={handleProductClick} />
       ))}
+      <Footer />
       <Modal isOpen={modalOpen} onClose={handleCloseModal}>
         {modalProduct && (
           <div style={{ textAlign: 'center' }}>
