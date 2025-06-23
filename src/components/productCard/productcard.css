@@ -1,7 +1,7 @@
 .product-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13), 0 1.5px 6px rgba(0,0,0,0.07);
   padding: 24px 20px 20px 20px;
   position: relative;
   display: flex;
@@ -9,6 +9,11 @@
   align-items: center;
   max-width: 320px;
   margin: 0 auto;
+  transition: box-shadow 0.22s;
+}
+
+.product-card:hover {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
 }
 
 .product-card__badge {

@@ -8,7 +8,7 @@ library.add(faWhatsapp)
 
 const ProductCard = ({ image, title, price, oldPrice, isOnSale, size }) => {
   const buyNow = () => {
-    window.open("https://facebook.com")
+    window.open("https://wa.me/+201009507136")
   }
   return (
     <div className="product-card">

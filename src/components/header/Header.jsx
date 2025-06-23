@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import './header.css'
 import { navItems } from '../../data'
 import logo from '../../logo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
 
 const Header = ({ searchValue, onSearchChange }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,15 +13,6 @@ const Header = ({ searchValue, onSearchChange }) => {
         <img src={logo} alt="Logo" />
       </div>
       <div className="header__search-container">
-        <input
-          type="text"
-          className="header__search-input"
-          placeholder="ابحث عن منتج..."
-          value={searchValue}
-          onChange={e => onSearchChange(e.target.value)}
-          aria-label="ابحث عن منتج"
-        />
-      </div>
       <button
         className="header__menu-toggle"
         aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -33,6 +22,15 @@ const Header = ({ searchValue, onSearchChange }) => {
       >
         <span className="header__menu-icon" />
       </button>
+        <input
+          type="text"
+          className="header__search-input"
+          placeholder="ابحث عن منتج..."
+          value={searchValue}
+          onChange={e => onSearchChange(e.target.value)}
+          aria-label="ابحث عن منتج"
+        />
+      </div>
       <nav
         className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}
         id="header-nav"
@@ -45,11 +43,10 @@ const Header = ({ searchValue, onSearchChange }) => {
           ))}
         </ul>
       </nav>
-      <div className="header__social">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faWhatsapp} /></a>
-        
-      </div>
+      {/* <div className="header__social">
+        <a href="https://www.facebook.com/share/1LbAFAF3RZ/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
+        <a href="https://wa.me/+201009507136" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faWhatsapp} /></a>
+      </div> */}
     </header>
   )
 }
