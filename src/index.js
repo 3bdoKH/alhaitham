@@ -3,11 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { Link, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Products from './pages/products/Products'
+import Contact from './pages/contact/Contact'
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <App />
+    },
+    {
+      path: '/products',
+      element:<Products />
+    },
+    {
+      path: '/contact',
+      element:<Contact />
+    },
+    {
+      path: '*',
+      element: <div>Page Not Found <Link to='/'>Back To Home Page</Link></div>
+    }
+  ]
+)
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

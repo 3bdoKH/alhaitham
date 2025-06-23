@@ -1,0 +1,61 @@
+// Helper to import all images from a folder (Webpack/CRA compatible)
+function importAll(r) {
+  try {
+    return r.keys().map(r);
+  } catch {
+    return [];
+  }
+}
+
+export const products = [
+  {
+    key: 'barke',
+    title: 'peli - legno باركيه',
+    description: `والارضيات الباركيه hdf التركى\n الارضيات hdf التركى 8 ملى \nارضيات تركى 8 ملى\nكلاس 21-31-32\nالوكيل الحصرى فى مصر لمصانع ارضيات peli - Legno`,
+    price: null,
+    images: importAll(require.context('./media/barke', false, /\.(jpg|jpeg|png)$/)),
+  },
+  {
+    key: 'ironturkish',
+    title: 'ابواب مصفحه تركي',
+    description: `باب تركي اصلي مستورد مصفح تصفيح كامل بخامات ممتازة و مزود بصوف صخري.. عازل للصوت و للأتربة و مضاد للحريق + ٤ كالون اصلي هوك و شفة للأمان لمنع التطفيش.. خباطة و عين سحرية و كامل الاكسسوارات مستوردة.. \nطلاء الكتروستاتك مضاد للصداء\nأحدث التصميمات هتلاقيها عندنا و أعلى جودة و أفضل سعر و اسرع تركيب في مصر ..كل دا عندنا و بس`,
+    price: { current: 11950, old: 13500 },
+    images: importAll(require.context('./media/ironturkish', false, /\.(jpg|jpeg|png)$/)),
+  },
+  {
+    key: 'ironturkishsizes-150',
+    title: 'ابواب مصفحه تركي مقاسات',
+    description: `باب تركي اصلي مستورد مصفح تصفيح كامل بخامات ممتازة و مزود بصوف صخري.. عازل للصوت و للأتربة و مضاد للحريق + ٤ كالون اصلي هوك و شفة للأمان لمنع التطفيش.. خباطة و عين سحرية و كامل الاكسسوارات مستوردة.. \nطلاء الكتروستاتك مضاد للصداء\nأحدث التصميمات هتلاقيها عندنا و أعلى جودة و أفضل سعر و اسرع تركيب في مصر ..كل دا عندنا و بس`,
+    size: '150cm',
+    price: 17500,
+    images: importAll(require.context('./media/ironturkishsizes/150', false, /\.(jpg|jpeg|png)$/)),
+  },
+  {
+    key: 'ironturkishsizes-120',
+    title: 'ابواب مصفحه تركي مقاسات',
+    description: `باب تركي اصلي مستورد مصفح تصفيح كامل بخامات ممتازة و مزود بصوف صخري.. عازل للصوت و للأتربة و مضاد للحريق + ٤ كالون اصلي هوك و شفة للأمان لمنع التطفيش.. خباطة و عين سحرية و كامل الاكسسوارات مستوردة.. \nطلاء الكتروستاتك مضاد للصداء\nأحدث التصميمات هتلاقيها عندنا و أعلى جودة و أفضل سعر و اسرع تركيب في مصر ..كل دا عندنا و بس`,
+    size: '120cm',
+    price: 17500,
+    images: importAll(require.context('./media/ironturkishsizes/120', false, /\.(jpg|jpeg|png)$/)),
+  },
+  {
+    key: 'sweden',
+    title: 'باب خشب موسكى سويدي ',
+    description: 'باب خشب موسكى سويدي عليه طبقة pvc وحلق اكليرليك مقاوم للمياه والحراره',
+    price: 'starts from 6500',
+    images: importAll(require.context('./media/sweden', false, /\.(jpg|jpeg|png)$/)),
+  },
+];
+
+export const navItems = [
+    {
+        name: 'Home',
+        link:'/'
+    },{
+        name:'Products',
+        link: '/products'
+    },{
+        name: 'Contact',
+        link: '/contact'
+    }
+]
