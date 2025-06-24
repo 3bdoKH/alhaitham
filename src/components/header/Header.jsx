@@ -43,10 +43,6 @@ const Header = ({ searchValue, onSearchChange }) => {
           ))}
         </ul>
       </nav>
-      {/* <div className="header__social">
-        <a href="https://www.facebook.com/share/1LbAFAF3RZ/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
-        <a href="https://wa.me/+201009507136" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faWhatsapp} /></a>
-      </div> */}
     </header>
   )
 }

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { products } from '../data';
+import { products } from '../../data';
 import './Gallery.css';
 
 function getAllImages() {
-  // Flatten all images from all products
   return products.flatMap(product => product.images);
 }
 

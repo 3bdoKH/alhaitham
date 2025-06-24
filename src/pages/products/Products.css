@@ -1,0 +1,18 @@
+.marquee {
+  background: linear-gradient(90deg, #f8fafc 0%, #e0e7ef 100%);
+  color: #1a237e;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(30, 34, 60, 0.08);
+  letter-spacing: 0.04em;
+  border: 1px solid #e3e6f0;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}

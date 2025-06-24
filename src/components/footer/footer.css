@@ -70,3 +70,39 @@
     gap: 16px;
   }
 }
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FFD34E;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3000;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.back-to-top-btn:hover {
+  background: #FFC83D;
+  color: #222;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+}
+
+@media (max-width: 700px) {
+  .back-to-top-btn {
+    bottom: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}

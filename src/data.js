@@ -8,13 +8,7 @@ function importAll(r) {
 }
 
 export const products = [
-  {
-    key: 'barke',
-    title: 'peli - legno باركيه',
-    description: `والارضيات الباركيه hdf التركى\n الارضيات hdf التركى 8 ملى \nارضيات تركى 8 ملى\nكلاس 21-31-32\nالوكيل الحصرى فى مصر لمصانع ارضيات peli - Legno`,
-    price: null,
-    images: importAll(require.context('./media/barke', false, /\.(jpg|jpeg|png)$/)),
-  },
+  
   {
     key: 'ironturkish',
     title: 'ابواب مصفحه تركي',
@@ -44,7 +38,13 @@ export const products = [
     description: 'باب خشب موسكى سويدي عليه طبقة pvc وحلق اكليرليك مقاوم للمياه والحراره',
     price: 'starts from 6500',
     images: importAll(require.context('./media/sweden', false, /\.(jpg|jpeg|png)$/)),
-  },
+  },{
+    key: 'barke',
+    title: 'peli - legno باركيه',
+    description: `والارضيات الباركيه hdf التركى\n الارضيات hdf التركى 8 ملى \nارضيات تركى 8 ملى\nكلاس 21-31-32\nالوكيل الحصرى فى مصر لمصانع ارضيات peli - Legno`,
+    price: null,
+    images: importAll(require.context('./media/barke', false, /\.(jpg|jpeg|png)$/)),
+  }
 ];
 
 export const navItems = [

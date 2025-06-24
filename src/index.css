@@ -8,7 +8,12 @@ body {
   margin-left: 2rem;
   margin-right: 2rem;
 }
-
+@media (width < 500px){
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

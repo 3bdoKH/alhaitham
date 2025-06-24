@@ -5,9 +5,9 @@ import Footer from './components/footer/Footer';
 import { products } from './data';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Gallery from './components/Gallery';
-import Modal from './components/Modal';
-import './components/modal.css';
+import Gallery from './components/gallery/Gallery';
+import Modal from './components/modal/Modal';
+import './components/modal/modal.css';
 
 function getAllProducts() {
   const all = [];
@@ -44,6 +44,7 @@ function App() {
   );
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalProduct, setModalProduct] = React.useState(null);
+  const [fullscreenImg, setFullscreenImg] = React.useState(false);
 
   const handleProductClick = (product) => {
     setModalProduct(product);
@@ -80,7 +81,7 @@ function App() {
       <Modal isOpen={modalOpen} onClose={handleCloseModal}>
         {modalProduct && (
           <div style={{ textAlign: 'center' }}>
-            <img src={modalProduct.image} alt={modalProduct.title} style={{ maxWidth: '100%', maxHeight: 300, marginBottom: 16 }} />
+            <img src={modalProduct.image} alt={modalProduct.title} style={{ maxWidth: '100%', maxHeight: 300, marginBottom: 16 }} onClick={() => setFullscreenImg(true)}/>
             <h2>{modalProduct.title}</h2>
             {modalProduct.size && <div style={{ margin: '8px 0', fontWeight: 'bold' }}>المقاس: {modalProduct.size}</div>}
             <div style={{ fontSize: 20, margin: '8px 0' }}>
@@ -98,6 +99,11 @@ function App() {
           </div>
         )}
       </Modal>
+      {fullscreenImg && modalProduct && (
+        <div className="fullscreen-image-overlay" onClick={() => setFullscreenImg(false)}>
+          <img src={modalProduct.image} alt={modalProduct.title} className="fullscreen-image" />
+        </div>
+      )}
     </div>
   );
 }
