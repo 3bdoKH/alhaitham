@@ -8,9 +8,10 @@
 }
 
 .header__logo img {
-  height: 48px;
+  height: 60px;
   width: auto;
   display: block;
+  border-radius: 16%;
 }
 
 .header__nav ul {
@@ -110,13 +111,15 @@
   border: 1.5px solid #007bff;
 }
 
+.header__search-container > svg {
+  display: none;
+}
+
 @media (max-width: 700px) {
   .header {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 12px 8px;
+    padding: 16px 8px;
     position: sticky;
-    top: -51px;
+    top: 0;
     z-index: 999;
     }
   .header__logo {
@@ -128,13 +131,36 @@
   }
   .header__search-container {
     order: 2;
-    width: 100%;
-    margin: 0 0 2rem 0;
     max-height: 34px;
     padding: 10px 15px;
     display: flex;
     align-items: center;
     gap: 15px;
+    margin: 0;
+  }
+  .header__search-container > input {
+    display: none;
+  }
+  .header__search-container > svg {
+    display: block;
+    cursor: pointer;
+  }
+  .header__search--open > input {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 97%;
+    max-width: none;
+    z-index: 1102;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    border-radius: 0 0 16px 16px;
+    animation: slideDown 0.2s;
+    margin: 0;
+  }
+  .header__search--open > svg {
+    display: none !important;
   }
   .header__menu-toggle {
     display: block !important;

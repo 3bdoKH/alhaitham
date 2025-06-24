@@ -1,46 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { ArrowUpToLine } from 'lucide-react'
+import { faFacebook, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
 const Footer = () => {
-  const [showTop, setShowTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowTop(window.scrollY > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <>
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-left">
-            <span className="footer-site-name">Elhaitham</span>
-          </div>
-          <div className="footer-center">
-          <a className='footer-link' href="https://www.facebook.com/share/1LbAFAF3RZ/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
-          <a className='footer-link' href="https://wa.me/+201009507136" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faWhatsapp} /></a>
-          </div>
-          <div className="footer-right">
-            <span>&copy; {new Date().getFullYear()} Elhaitham. All rights reserved. Designed By <a href='https://emereld.vercel.app'>EMERELD</a></span>
-          </div>
-        </div>
-      </footer>
-      {showTop && (
-        <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
-          <ArrowUpToLine />
-        </button>
-      )}
-    </>
+    <footer className="footer new-footer-layout">
+      <div className="footer-logo">
+        {/* Replace src with your actual logo path if needed */}
+        <img src="/logo.png" alt="Logo" className="footer-logo-img" />
+      </div>
+      <nav className="footer-nav">
+        <a href="#home" className="footer-nav-link">Home</a>
+        <a href="#shop" className="footer-nav-link">Shop</a>
+        <a href="#contact" className="footer-nav-link">Contact</a>
+      </nav>
+      <div className="footer-socials">
+        <a className="footer-social-icon" href="https://www.facebook.com/share/1LbAFAF3RZ/" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
+        <a className="footer-social-icon" href="https://wa.me/+201009507136" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </a>
+      </div>
+      <p>@2025 Alhaitham, Developed by <a href="https://emereld.vercel.app/" >EMERELD</a></p>
+    </footer>
   )
 }
 

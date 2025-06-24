@@ -10,6 +10,8 @@
   max-width: 320px;
   margin: 0 auto;
   transition: box-shadow 0.22s;
+  height: 90%;
+  justify-content: end;
 }
 
 .product-card:hover {
