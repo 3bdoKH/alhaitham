@@ -2,7 +2,7 @@ import React from 'react'
 import './footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-
+import { navItems } from '../../data'
 const Footer = () => {
   return (
     <footer className="footer new-footer-layout">
@@ -11,9 +11,9 @@ const Footer = () => {
         <img src="/logo.png" alt="Logo" className="footer-logo-img" />
       </div>
       <nav className="footer-nav">
-        <a href="#home" className="footer-nav-link">Home</a>
-        <a href="#shop" className="footer-nav-link">Shop</a>
-        <a href="#contact" className="footer-nav-link">Contact</a>
+      {navItems.map((item) => (
+            <a className='footer-nav-link' key={item.name} href={item.link} >{item.name}</a>
+          ))}
       </nav>
       <div className="footer-socials">
         <a className="footer-social-icon" href="https://www.facebook.com/share/1LbAFAF3RZ/" target="_blank" rel="noopener noreferrer">
