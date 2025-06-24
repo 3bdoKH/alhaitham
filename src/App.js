@@ -92,7 +92,7 @@ function App() {
             <button
               className="product-card__add-btn"
               style={{ marginTop: 24 }}
-              onClick={() => window.open('https://facebook.com')}
+              onClick={() => window.open('https://wa.me/+201009507136')}
             >
               Buy Now <span className="product-card__cart-icon"><i className="fab fa-whatsapp" /></span>
             </button>

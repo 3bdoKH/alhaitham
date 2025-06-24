@@ -34,7 +34,7 @@ export const products = [
   },
   {
     key: 'sweden',
-    title: 'باب خشب موسكى سويدي ',
+    title: 'ابواب غرف وحمامات',
     description: 'باب خشب موسكى سويدي عليه طبقة pvc وحلق اكليرليك مقاوم للمياه والحراره',
     price: 'starts from 6500',
     images: importAll(require.context('./media/sweden', false, /\.(jpg|jpeg|png)$/)),
