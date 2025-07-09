@@ -38,22 +38,13 @@ function getRandomProducts(count) {
 function App() {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = React.useState("");
-  const randomProducts = getRandomProducts(6).filter(product =>
+  const randomProducts = getRandomProducts(8).filter(product =>
     product.title.toLowerCase().includes(searchValue.toLowerCase()) ||
     (product.description && product.description.toLowerCase().includes(searchValue.toLowerCase()))
   );
-  const [modalOpen, setModalOpen] = React.useState(false);
-  const [modalProduct, setModalProduct] = React.useState(null);
-  const [fullscreenImg, setFullscreenImg] = React.useState(false);
 
   const handleProductClick = (product) => {
-    setModalProduct(product);
-    setModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
-    setModalProduct(null);
+    navigate(`/products/${product.categoryKey}/${product.idx}`);
   };
 
   return (
@@ -78,32 +69,10 @@ function App() {
         <button className="show-more-btn" onClick={() => navigate('/products')}>عرض كل المنتجات</button>
       </section>
       <Footer />
-      <Modal isOpen={modalOpen} onClose={handleCloseModal}>
-        {modalProduct && (
-          <div style={{ textAlign: 'center' }}>
-            <img src={modalProduct.image} alt={modalProduct.title} style={{ maxWidth: '100%', maxHeight: 300, marginBottom: 16 }} onClick={() => setFullscreenImg(true)}/>
-            <h2>{modalProduct.title}</h2>
-            {modalProduct.size && <div style={{ margin: '8px 0', fontWeight: 'bold' }}>المقاس: {modalProduct.size}</div>}
-            <div style={{ fontSize: 20, margin: '8px 0' }}>
-              {modalProduct.price && <span>{modalProduct.price} EGP</span>}
-              {modalProduct.oldPrice && <span style={{ textDecoration: 'line-through', color: '#888', marginLeft: 8 }}>{modalProduct.oldPrice} EGP</span>}
-            </div>
-            <p style={{ whiteSpace: 'pre-line', marginTop: 16 }}>{modalProduct.description}</p>
-            <button
-              className="product-card__add-btn"
-              style={{ marginTop: 24 }}
-              onClick={() => window.open('https://wa.me/+201009507136')}
-            >
-              Buy Now <span className="product-card__cart-icon"><i className="fab fa-whatsapp" /></span>
-            </button>
-          </div>
-        )}
+      <Modal isOpen={false} onClose={() => { }}>
+        {/* Modal content removed as per edit hint */}
       </Modal>
-      {fullscreenImg && modalProduct && (
-        <div className="fullscreen-image-overlay" onClick={() => setFullscreenImg(false)}>
-          <img src={modalProduct.image} alt={modalProduct.title} className="fullscreen-image" />
-        </div>
-      )}
+      {/* Fullscreen image overlay removed as per edit hint */}
     </div>
   );
 }

@@ -9,7 +9,8 @@ import Footer from '../../components/footer/Footer';
 import { motion } from 'framer-motion';
 import './Products.css'
 import Marquee from 'react-fast-marquee';
-const PRODUCTS_PER_PAGE = 6;
+import { useNavigate } from 'react-router-dom';
+const PRODUCTS_PER_PAGE = 8;
 
 
 function CategorySection({ product, onProductClick }) {
@@ -17,7 +18,7 @@ function CategorySection({ product, onProductClick }) {
   const showMore = () => setVisibleCount((c) => Math.min(c + PRODUCTS_PER_PAGE, product.images.length));
   return (
     <section className="category-section">
-      
+
       <h2 className="category-title">{product.size} {product.title}</h2>
       <div className="product-grid">
         {product.images.slice(0, visibleCount).map((img, idx) => (
@@ -50,10 +51,8 @@ function CategorySection({ product, onProductClick }) {
 }
 
 const Products = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalProduct, setModalProduct] = useState(null);
   const [searchValue, setSearchValue] = useState("");
-  const [fullscreenImg, setFullscreenImg] = useState(false);
+  const navigate = useNavigate();
 
   const filteredProducts = products.filter(product =>
     product.title.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -61,19 +60,13 @@ const Products = () => {
   );
 
   const handleProductClick = (product) => {
-    setModalProduct(product);
-    setModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
-    setModalProduct(null);
+    navigate(`/products/${product.categoryKey}/${product.idx}`);
   };
 
   return (
     <div>
       <Header searchValue={searchValue} onSearchChange={setSearchValue} />
-      
+
       {filteredProducts.map((product, idx) => (
         <motion.div
           key={product.key}
@@ -104,34 +97,10 @@ const Products = () => {
         </motion.div>
       ))}
       <Footer />
-      <Modal isOpen={modalOpen} onClose={handleCloseModal}>
-        {modalProduct && (
-          <div style={{ textAlign: 'center' }}>
-            <img
-              src={modalProduct.image}
-              alt={modalProduct.title}
-              style={{ maxWidth: '100%', maxHeight: 300, marginBottom: 16, cursor: 'zoom-in' }}
-              onClick={() => setFullscreenImg(true)}
-            />
-            <h2>{modalProduct.title}</h2>
-            <div style={{ fontSize: 20, margin: '8px 0' }}>{modalProduct.price}  {modalProduct.oldPrice && <span style={{ textDecoration: 'line-through', color: '#888', marginLeft: 8 }}>{modalProduct.oldPrice} EGP</span>}</div>
-            <p style={{ whiteSpace: 'pre-line', marginTop: 16 }}>{modalProduct.description}</p>
-            {modalProduct.size && <div style={{ marginTop: 8 }}>المقاس: {modalProduct.size}</div>}
-            <button
-              className="product-card__add-btn"
-              style={{ marginTop: 24 }}
-              onClick={() => window.open('https://wa.me/+201009507136')}
-            >
-              Buy Now
-            </button>
-          </div>
-        )}
+      <Modal isOpen={false} onClose={() => { }}>
+        {/* Modal content removed as per edit hint */}
       </Modal>
-      {fullscreenImg && modalProduct && (
-        <div className="fullscreen-image-overlay" onClick={() => setFullscreenImg(false)}>
-          <img src={modalProduct.image} alt={modalProduct.title} className="fullscreen-image" />
-        </div>
-      )}
+      {/* Fullscreen image overlay removed as per edit hint */}
     </div>
   );
 };
