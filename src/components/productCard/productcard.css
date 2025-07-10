@@ -18,6 +18,20 @@
   box-shadow: 0 12px 36px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
 }
 
+.product-card__shipping-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #FFD34E;
+  color: #1a237e;
+  font-weight: bold;
+  font-size: 0.92rem;
+  border-radius: 6px;
+  padding: 3px 12px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  z-index: 2;
+}
 .product-card__badge {
   position: absolute;
   top: 16px;
@@ -30,6 +44,7 @@
   padding: 4px 14px;
   letter-spacing: 0.5px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  z-index: 3;
 }
 
 .product-card__image-wrapper {
@@ -104,4 +119,16 @@
 
 .product-card__cart-icon {
   font-size: 1.2em;
+}
+
+@media (max-width: 700px) {
+  .product-card__shipping-badge {
+    font-size: 0.82rem;
+    padding: 2px 8px;
+    top: 10px;
+    right: 10px;
+  }
+  .product-card__badge {
+    left: 10px;
+  }
 }

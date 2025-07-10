@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App, { CartProvider } from './App';
+import { HelmetProvider } from 'react-helmet-async'; // <-- Add this
 import reportWebVitals from './reportWebVitals';
 import { Link, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Products from './pages/products/Products'
 import Contact from './pages/contact/Contact'
 import ProductDetails from './pages/products/ProductDetails';
+import Cart from './pages/products/Cart';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter(
   [
@@ -23,6 +25,10 @@ const router = createBrowserRouter(
       element: <ProductDetails />
     },
     {
+      path: '/cart',
+      element: <Cart />
+    },
+    {
       path: '/contact',
       element:<Contact />
     },
@@ -34,7 +40,11 @@ const router = createBrowserRouter(
 )
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
 

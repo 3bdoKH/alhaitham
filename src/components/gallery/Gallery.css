@@ -1,10 +1,6 @@
+/* --- Gallery Slider Fixes --- */
 .gallery {
-  width: 100vw;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  max-width: 1100px;
   margin: 0 auto 32px auto;
   background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
   padding: 1rem 0.5rem;
@@ -12,45 +8,73 @@
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
 
+.gallery .slick-slide {
+  padding: 0 10px;
+}
+
+.gallery .slick-list {
+  margin: 0 -10px;
+}
+
+.gallery .slick-slider,
+.gallery .slick-list,
+.gallery .slick-track {
+  height: 340px;
+  min-height: 180px;
+}
+
 .gallery-image {
-  flex: 1 1 0;
-  width: 33.33vw;
+  width: 100%;
+  max-width: 380px;
   height: 320px;
   object-fit: cover;
-  margin: 0;
+  margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   transition: transform 0.4s, box-shadow 0.4s;
   cursor: pointer;
+  display: block;
 }
 
 .gallery-image:hover {
   box-shadow: 0 6px 24px rgba(0,0,0,0.13);
 }
 
-.gallery-image:not(:last-child) {
-  border-right: 4px solid #fff;
-}
-
 @media (max-width: 900px) {
-  .gallery-image {
+  .gallery .slick-slider,
+  .gallery .slick-list,
+  .gallery .slick-track {
     height: 180px;
-    width: 33.33vw;
+    min-height: 100px;
+  }
+  .gallery-image {
+    height: 160px;
+    max-width: 90vw;
+  }
+  .gallery .slick-slide {
+    padding: 0 4px;
+  }
+  .gallery .slick-list {
+    margin: 0 -4px;
   }
 }
 
 @media (max-width: 600px) {
-  .gallery {
-    flex-direction: column;
+  .gallery .slick-slider,
+  .gallery .slick-list,
+  .gallery .slick-track {
+    height:175px;
+    min-height: 60px;
   }
   .gallery-image {
-    width: 82vw;
-    height: 100px;
-    border-right: none;
-    border-bottom: 4px solid #fff;
-    border-radius: 9999px;
+    height: 170px;
+    max-width: 96vw;
+    border-radius: 10px;
   }
-  .gallery-image:not(:last-child) {
-    border-bottom: 4px solid #fff;
+  .gallery .slick-slide {
+    padding: 0 2px;
+  }
+  .gallery .slick-list {
+    margin: 0 -2px;
   }
 } 

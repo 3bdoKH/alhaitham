@@ -36,16 +36,28 @@ export const products = [
     key: 'sweden',
     title: 'ابواب غرف وحمامات',
     description: 'باب خشب موسكى سويدي عليه طبقة pvc وحلق اكليرليك مقاوم للمياه والحراره',
-    price: 'starts from 6500',
+    price: 'تبدا من 6500',
     images: importAll(require.context('./media/sweden', false, /\.(jpg|jpeg|png)$/)),
   },{
     key: 'barke',
     title: 'peli - legno باركيه',
-    description: `والارضيات الباركيه hdf التركى\n الارضيات hdf التركى 8 ملى \nارضيات تركى 8 ملى\nكلاس 21-31-32\nالوكيل الحصرى فى مصر لمصانع ارضيات peli - Legno`,
+    description: `باركيه 
+                  الارضيات الباركيه hdf التركى 
+                  الارضيات hdf التركى 8 ملى 
+                  ارضيات تركى 8 ملى 
+                  كلاس 21-31-32 
+                  الوكيل الحصرى فى مصر لمصانع ارضيات peli - Legno `,
     price: null,
     images: importAll(require.context('./media/barke', false, /\.(jpg|jpeg|png)$/)),
   }
 ];
+
+export function getProductByKeyAndIdx(key, idx) {
+  const product = products.find(p => p.key === key);
+  if (!product) return null;
+  const image = product.images && product.images[idx] ? product.images[idx] : (product.images && product.images[0]);
+  return { ...product, image, idx };
+}
 
 export const navItems = [
     {

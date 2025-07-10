@@ -1,36 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { products } from '../../data';
 import './Gallery.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function getAllImages() {
   return products.flatMap(product => product.images);
 }
 
-function getRandomImages(count) {
-  const all = getAllImages();
-  const shuffled = all.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
-
 const Gallery = () => {
-  const getImageCount = () => (window.innerWidth <= 600 ? 1 : 3);
-  const [images, setImages] = useState(() => getRandomImages(getImageCount()));
-
-  useEffect(() => {
-    const updateImages = () => setImages(getRandomImages(getImageCount()));
-    const interval = setInterval(updateImages, 3000);
-    window.addEventListener('resize', updateImages);
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener('resize', updateImages);
-    };
-  }, []);
+  const images = getAllImages().slice(0, 10);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: window.innerWidth <= 600 ? 1 : 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: { slidesToShow: 1 }
+      },
+      {
+        breakpoint: 600,
+        settings: { slidesToShow: 1 }
+      }
+    ],
+    
+  };
 
   return (
     <div className="gallery">
-      {images.map((img, idx) => (
-        <img key={idx} src={img} alt="عرض باب" className="gallery-image" />
-      ))}
+      <Slider {...settings}>
+        {images.map((img, idx) => (
+          <div key={idx}>
+            <img src={img} alt="عرض باب" className="gallery-image" />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

@@ -16,3 +16,202 @@
   justify-content: center;
   margin-top: 2rem;
 }
+
+.products-page-bg {
+  background: linear-gradient(90deg, #f8fafc 0%, #e0e7ef 100%);
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  padding-bottom: 0;
+}
+
+/* Products Hero Section */
+.products-hero-section {
+  width: 100vw;
+  max-width: 100%;
+  background: linear-gradient(90deg, #1a237e 0%, #f9a825 100%);
+  color: #fff;
+  padding: 64px 0 48px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.products-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 2;
+}
+.products-hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  color: #FFD34E;
+}
+.products-hero-desc {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.products-hero-cta {
+  background: #FFD34E;
+  color: #1a237e;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 44px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(30,34,60,0.10);
+  transition: background 0.2s, color 0.2s;
+}
+.products-hero-cta:hover {
+  background: #FFC83D;
+  color: #fff;
+}
+
+.products-page-subtitle {
+  text-align: center;
+  color: #1a237e;
+  font-size: 1.15rem;
+  margin-bottom: 32px;
+  margin-top: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.products-main-content {
+  max-width: 1200px;
+  margin: 0 auto 48px auto;
+  padding: 0 16px;
+}
+
+/* Why Shop With Us Section */
+.why-shop-section {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 48px 0 32px 0;
+  margin: 0 auto 48px auto;
+  max-width: 1200px;
+  text-align: center;
+}
+.why-shop-section h2 {
+  font-size: 2rem;
+  color: #1a237e;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+.why-shop-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.why-shop-feature-item {
+  background: #f4f6fa;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(30,34,60,0.07);
+  padding: 32px 24px;
+  min-width: 220px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.why-shop-feature-item:hover {
+  box-shadow: 0 8px 32px rgba(30,34,60,0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+.why-shop-icon {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+}
+.why-shop-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 8px;
+}
+.why-shop-desc {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* CTA Strip */
+.products-cta-strip {
+  background: linear-gradient(90deg, #1a237e 0%, #f9a825 100%);
+  color: #fff;
+  padding: 32px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 0 auto 0 auto;
+}
+.products-cta-btn {
+  background: #FFD34E;
+  color: #1a237e;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 38px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(30,34,60,0.10);
+  transition: background 0.2s, color 0.2s;
+}
+.products-cta-btn:hover {
+  background: #FFC83D;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .why-shop-features {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .why-shop-feature-item {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .products-hero-title {
+    font-size: 2.1rem;
+  }
+  .products-hero-section {
+    padding: 40px 0 24px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-hero-section {
+    padding: 24px 0 12px 0;
+  }
+  .products-hero-title {
+    font-size: 1.3rem;
+  }
+  .products-hero-desc {
+    font-size: 1rem;
+  }
+  .why-shop-section {
+    padding: 24px 0 12px 0;
+    border-radius: 10px;
+  }
+  .products-cta-strip {
+    font-size: 1rem;
+    padding: 18px 0;
+  }
+  .products-cta-btn {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+}
