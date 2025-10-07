@@ -117,7 +117,7 @@ function App() {
         <AdvertisingBanner />
         <Header searchValue={searchValue} onSearchChange={setSearchValue} />
         {/* Hero Section */}
-        <section className="hero-section">
+        <section className="hero-section hero-section-logo-bg">
           <div className="hero-content">
             <h1 className="hero-title">الهيثم للأبواب والديكور</h1>
             <p className="hero-desc">أبواب مصفحة تركي أصلية، أبواب غرف، أرضيات باركيه HDF، أفضل جودة وأسرع تركيب في مصر. منتجات أصلية مستوردة، مقاومة للصوت والأتربة والحريق، مزودة بأحدث وسائل الأمان والتصميمات العصرية.</p>

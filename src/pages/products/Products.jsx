@@ -8,7 +8,6 @@ import '../../components/modal/modal.css';
 import Footer from '../../components/footer/Footer';
 import { motion } from 'framer-motion';
 import './Products.css'
-import Marquee from 'react-fast-marquee';
 import { useNavigate } from 'react-router-dom';
 const PRODUCTS_PER_PAGE = 8;
 
@@ -86,25 +85,7 @@ const Products = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: idx * 0.18 }}
           >
-            {/* <Marquee speed={90} className='marquee'>
-              {product.images.slice(0, 20).map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={product.title + ' ' + (i + 1)}
-                  style={{
-                    height: '48px',
-                    width: 'auto',
-                    margin: '0 18px',
-                    borderRadius: '6px',
-                    boxShadow: '0 1px 6px rgba(30,34,60,0.10)',
-                    objectFit: 'cover',
-                    background: '#fff',
-                    border: '1px solid #e3e6f0',
-                  }}
-                />
-              ))}
-            </Marquee> */}
+
             <CategorySection product={product} onProductClick={handleProductClick} />
           </motion.div>
         ))}

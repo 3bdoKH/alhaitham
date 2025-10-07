@@ -1,7 +1,7 @@
 import React from 'react'
 import './footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faWhatsapp, faInstagram, faYoutube, faPinterest } from '@fortawesome/free-brands-svg-icons'
+import { faFacebook, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { navItems } from '../../data'
 
 const Footer = () => {
@@ -9,7 +9,10 @@ const Footer = () => {
     <footer className="footer new-footer-layout">
       <div className="footer-main">
         <div className="footer-col footer-about">
-          <img src="/logo.png" alt="Logo" className="footer-logo-img" />
+          <div className="footer-brand">
+            <img src="/logo.png" alt="Logo" className="footer-logo-img" />
+            <span>Alhaitham Doors</span>
+          </div>
           <p className="footer-about-text">
             الهيثم للعمارة والديكور - أبواب مصفحة تركي أصلية، أبواب غرف، أرضيات باركيه HDF، أفضل جودة وأسرع تركيب في مصر. منتجات أصلية مستوردة، مقاومة للصوت والأتربة والحريق، مزودة بأحدث وسائل الأمان والتصميمات العصرية.
           </p>
@@ -42,15 +45,12 @@ const Footer = () => {
           <div className="footer-social-icons">
             <a href="https://www.facebook.com/share/1LbAFAF3RZ/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
             <a href="https://wa.me/201009507136" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faWhatsapp} /></a>
-            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-            <a href="#"><FontAwesomeIcon icon={faYoutube} /></a>
-            <a href="#"><FontAwesomeIcon icon={faPinterest} /></a>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>@2025 Alhaitham. Developed by <a href="https://emereld-marketing.online">EMERELD</a></p>
-        <button className="back-to-top-btn" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} title="العودة للأعلى">↑</button>
+        <p>@2025 Alhaitham. Developed by <a href="https://emereld-marketing.online">Adam's Agency</a></p>
+        <button className="back-to-top-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} title="العودة للأعلى">↑</button>
       </div>
     </footer>
   )

@@ -5,8 +5,7 @@ import logo from '../../logo.png'
 import { Search } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../App';
-import { faFacebook, faInstagram, faYoutube, faPinterest, faWhatsapp, faSnapchat, faTiktok, faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faHeart, faBalanceScale, faX } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const socialLinks = [
@@ -77,10 +76,11 @@ const Header = ({ searchValue, onSearchChange }) => {
       <header className="header">
         {/* Second Row: Logo, Search, Cart/Price */}
         <div className="header-second-row">
-          <div className="header-logo-box">
+          <div className="header-logo-box header-brand">
             <Link to="/">
-              <img src={logo} alt="Logo" style={{ height: 60, borderRadius: 12 }} />
+              <img src={logo} alt="Logo" className="header-logo-img" />
             </Link>
+            <span className="header-brand-name">Alhaitham Doors</span>
           </div>
           <div className="header-search-cart-box">
             <div className="header-search-bar">

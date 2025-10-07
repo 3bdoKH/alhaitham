@@ -23,7 +23,8 @@ const ProductCard = ({ image, title, price, oldPrice, isOnSale, size, productKey
   };
   return (
     <div className="product-card">
-      {isOnSale && <div className="product-card__badge">SALE</div>}
+      {/* Remove SALE badge */}
+      {/* {isOnSale && <div className="product-card__badge">SALE</div>} */}
       <div className="product-card__shipping-badge">شحن مجاني</div>
       <div className="product-card__image-wrapper">
         <img src={image} alt={title} className="product-card__image" />
